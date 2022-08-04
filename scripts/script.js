@@ -1,9 +1,10 @@
 //1. First get json data from the URL using fetch API
-//2. Create a function that will take the json data and create a question object
-//3. Create a function that will take the question object and create a question card
-//4. Create a function that will take the question card and display it on the page
+//2. Combine all the question sets into one array
+// 3. Create function that randomly selects a question object from the array
+//4. Create a function that will take the question object and create a question card
+//5. Create a function that will take the question card and display it on the page
 
-// Array structure is {games : [set 1], [set 2], [set 3], [set 4], [set 5]}  //5 arrays of questions
+// JSON structure is {games : [set 1], [set 2], [set 3], [set 4], [set 5]}  //5 arrays of questions
 // Sets array structure is {questions : [question 1], [question 2], [question 3], [question 4], [question 5] ... [question 15]}
 
 
@@ -28,17 +29,19 @@ getQuestions(URL);
 
 function mergeQuestionSets (data) {
     let questionSets = data.games; // Array of question sets
-    let newQuestionsArray = []; // Array of questions
+    let newQuestionsArray = []; // New Array of all question sets combined
 
-    for (let i = 0; i < questionSets.length; i++) {
-        let questions = questionSets[i].questions; // Array of questions
-        for (let j = 0; j < questions.length; j++) {
-            newQuestionsArray.push(questions[j]);
+    for (let i = 0; i < questionSets.length; i++) { // Loop through each question set
+        let questions = questionSets[i].questions; // Get questions from question set
+        for (let j = 0; j < questions.length; j++) { // Loop through each question in question set
+            newQuestionsArray.push(questions[j]); // Add question to new array
         }
     }
     console.log(newQuestionsArray);
     
-}
+};
+
+
 
 // function createQuestionObject (data) {
 //     let questionSets = data.games;
