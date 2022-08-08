@@ -100,6 +100,13 @@ async function displayQuestion() {
   correctAnswer(); //call the function to decide if answer is correct or not
 }
 
+// function to introduce delay, then execute
+const delay = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+};
+
 async function correctAnswer() {
   // If user clicks correct answer, change the background color of the option to green, else change it to red
   let questionObject = await getRandomQuestion();
