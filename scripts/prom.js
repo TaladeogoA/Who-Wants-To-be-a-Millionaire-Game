@@ -20,8 +20,80 @@ function startGame() {
   displayNextQuestion();
 }
 
-function displayNextQuestion() {
-  resetState();
+async function displayNextQuestion() {
   console.log("🚀 ~ displayNextQuestion is running", displayNextQuestion);
-  displayQuestion();
+  resetState();
+  const question = await getRandomQuestion();
+  displayQuestion(question);
+}
+
+function displayQuestion(questionObject) {
+  console.log("🚀 ~ displayQuestion is running", displayQuestion);
+
+  const questionCard = document.getElementById("question-card");
+  questionCard.innerHTML = `<h2>${questionObject.question}</h2>`;
+
+  const option1 = document.getElementById("option-one");
+  const option2 = document.getElementById("option-two");
+  const option3 = document.getElementById("option-three");
+  const option4 = document.getElementById("option-four");
+
+  option1.innerHTML = `
+    <span class="text-orange font-bold mr-1">A:</span>
+    <span>${questionObject.content[0]}</span>`;
+  option2.innerHTML = `
+    <span class="text-orange font-bold mr-1">B:</span>
+    <span>${questionObject.content[1]}</span>`;
+  option3.innerHTML = `
+    <span class="text-orange font-bold mr-1">C:</span>
+    <span>${questionObject.content[2]}</span>`;
+  option4.innerHTML = `
+    <span class="text-orange font-bold mr-1">D:</span>
+    <span>${questionObject.content[3]}</span>`; 
+}
+
+// Reset the state of the game
+function resetState() {
+  let options = document.getElementsByClassName("options");
+  for (let i = 0; i < options.length; i++) {
+    options[i].classList.remove("selected-answer");
+    options[i].classList.remove("correct-answer");
+    options[i].classList.remove("wrong-answer");
+    options[i].classList.add("options");
+  }
+}
+
+//====================//
+// * Get questions * //
+//====================//
+// Get the data from the URL
+async function getQuestions() {
+  const URL = "https://raw.githubusercontent.com/aaronnech/Who-Wants-to-Be-a-Millionaire/master/questions.json";
+
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Merge all the question sets into one array
+async function mergeQuestionSets() {
+  const data = await getQuestions();
+  let questions = [];
+  for (let i = 0; i < data.games.length; i++) {
+    questions = questions.concat(data.games[i].questions);
+  }
+
+  return questions;
+}
+
+// Get a random question from the array
+async function getRandomQuestion() {
+  const questions = await mergeQuestionSets();
+  const randomIndex = Math.floor(Math.random() * questions.length);
+
+  return questions[randomIndex];
 }
