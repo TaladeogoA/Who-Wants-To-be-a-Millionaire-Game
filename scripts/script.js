@@ -115,14 +115,15 @@ async function correctAnswer(questionObject) {
   console.log(correctAnswerIndex);
 
   for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", async function () {
+    options[i].addEventListener("click", async function (e) {
       letsPlayAudio.pause();
       selectedAnswerAudio.play();
       options[i].classList.add("selected-answer");
+      const currentAnswer = e.target.dataset.id
       
       await delay(2000);
       (async function () {
-        if (i == correctAnswerIndex) {
+        if (currentAnswer == correctAnswerIndex) {
           //if the user selects the correct answer
           options[i].classList.replace("selected-answer", "correct-answer");
           selectedAnswerAudio.pause();
