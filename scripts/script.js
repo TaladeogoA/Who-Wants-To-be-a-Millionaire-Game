@@ -97,7 +97,7 @@ async function displayQuestion() {
     <span>${questionObject.content[3]}</span>
     `
 
-  correctAnswer(); //call the function to decide if answer is correct or not
+  correctAnswer(questionObject); //call the function to decide if answer is correct or not
 }
 
 // function to introduce delay, then execute
@@ -107,9 +107,9 @@ const delay = (ms) => {
   });
 };
 
-async function correctAnswer() {
+async function correctAnswer(questionObject) {
   // If user clicks correct answer, change the background color of the option to green, else change it to red
-  let questionObject = await getRandomQuestion();
+  // let questionObject = await getRandomQuestion();
   let options = document.getElementsByClassName("options");
   let correctAnswerIndex = questionObject.correct;
   console.log(correctAnswerIndex);
