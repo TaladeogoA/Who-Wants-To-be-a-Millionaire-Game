@@ -119,28 +119,31 @@ async function correctAnswer() {
       letsPlayAudio.pause();
       selectedAnswerAudio.play();
       options[i].classList.add("selected-answer");
-
-      setTimeout(function () {
+      
+      await delay(2000);
+      (async function () {
         if (i == correctAnswerIndex) {
           //if the user selects the correct answer
           options[i].classList.replace("selected-answer", "correct-answer");
           selectedAnswerAudio.pause();
           correctAnswerAudio.play();
-          setTimeout(function () {
+          await delay(6000);
+          (function () {
             resetState();
             displayNextQuestion();
-          }, 6000);
+          })()
           
         } else {
           options[i].classList.replace("selected-answer", "wrong-answer");
           // options[i].classList.remove('options');
           selectedAnswerAudio.pause();
           wrongAnswerAudio.play();
-          setTimeout(function () {
+          await delay(2000);
+          (function () {
             endGame();
-          });
+          }) ();
         }
-      }, 2000);
+      })()
     });
   }
 }
