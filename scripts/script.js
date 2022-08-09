@@ -97,43 +97,54 @@ async function displayQuestion() {
     <span>${questionObject.content[3]}</span>
     `
 
-  correctAnswer(); //call the function to decide if answer is correct or not
+  correctAnswer(questionObject); //call the function to decide if answer is correct or not
 }
 
-async function correctAnswer() {
+// function to introduce delay, then execute
+const delay = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+};
+
+async function correctAnswer(questionObject) {
   // If user clicks correct answer, change the background color of the option to green, else change it to red
-  let questionObject = await getRandomQuestion();
+  // let questionObject = await getRandomQuestion();
   let options = document.getElementsByClassName("options");
   let correctAnswerIndex = questionObject.correct;
   console.log(correctAnswerIndex);
 
   for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", function () {
+    options[i].addEventListener("click", async function (e) {
       letsPlayAudio.pause();
       selectedAnswerAudio.play();
       options[i].classList.add("selected-answer");
-
-      setTimeout(function () {
-        if (i == correctAnswerIndex) {
+      const currentAnswer = e.target.dataset.id
+      
+      await delay(2000);
+      (async function () {
+        if (currentAnswer == correctAnswerIndex) {
           //if the user selects the correct answer
           options[i].classList.replace("selected-answer", "correct-answer");
           selectedAnswerAudio.pause();
           correctAnswerAudio.play();
-          setTimeout(function () {
+          await delay(6000);
+          (function () {
             resetState();
             displayNextQuestion();
-          }, 6000);
+          })()
           
         } else {
           options[i].classList.replace("selected-answer", "wrong-answer");
           // options[i].classList.remove('options');
           selectedAnswerAudio.pause();
           wrongAnswerAudio.play();
-          setTimeout(function () {
+          await delay(2000);
+          (function () {
             endGame();
-          });
+          }) ();
         }
-      }, 2000);
+      })()
     });
   }
 }
