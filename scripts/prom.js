@@ -8,11 +8,14 @@
 const letsPlayBtn = document.getElementById("lets-play");
 const letsPlayAudio = document.getElementById("lets-play-audio");
 const welcomeSection = document.querySelector(".welcome-container");
+const selectedAnswerAudio = document.getElementById("selected-answer-audio");
+const correctAnswerAudio = document.getElementById("correct-answer-audio");
+const wrongAnswerAudio = document.getElementById("wrong-answer-audio");
 
 letsPlayBtn.addEventListener("click", startGame);
 
 function startGame() {
-  console.log("🚀 ~ fstartGame is starting", startGame);
+  console.log("🚀 ~ startGame is starting", startGame);
   letsPlayAudio.play();
   welcomeSection.classList.replace("h-screen", "h-0");
   letsPlayBtn.style.display = "none";
@@ -20,15 +23,25 @@ function startGame() {
   displayNextQuestion();
 }
 
+function endGame() {
+  console.log("🚀 ~ endGame is running", endGame);
+  console.log("The game is over");
+}
+
+let currentQuestion; // make current question available to entire app
+
 async function displayNextQuestion() {
   console.log("🚀 ~ displayNextQuestion is running", displayNextQuestion);
   resetState();
+  letsPlayAudio.play();
   const question = await getRandomQuestion();
-  displayQuestion(question);
+  currentQuestion = question;
+  displayQuestion(currentQuestion);
 }
 
 function displayQuestion(questionObject) {
   console.log("🚀 ~ displayQuestion is running", displayQuestion);
+  console.log(currentQuestion);
 
   const questionCard = document.getElementById("question-card");
   questionCard.innerHTML = `<h2>${questionObject.question}</h2>`;
@@ -49,11 +62,55 @@ function displayQuestion(questionObject) {
     <span>${questionObject.content[2]}</span>`;
   option4.innerHTML = `
     <span class="text-orange font-bold mr-1">D:</span>
-    <span>${questionObject.content[3]}</span>`; 
+    <span>${questionObject.content[3]}</span>`;
+
+  // prepare options for click
+  let options = document.getElementsByClassName("options");
+  options = Array.from(options);
+  options.forEach((option) => {
+    option.addEventListener("click", handleAnswer);
+  });
+}
+
+// function to introduce delay
+const delay = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+};
+
+async function handleAnswer(e) {
+  console.log("🚀 ~ handleAnswer is running", handleAnswer);
+  const selectedAnswer = e.target.dataset.id;
+  let options = document.getElementsByClassName("options");
+  options = Array.from(options);
+  const currentAnswer = currentQuestion.correct;
+
+  letsPlayAudio.pause();
+  selectedAnswerAudio.play();
+  options[selectedAnswer].classList.add("selected-answer");
+
+  await delay(2000);
+
+  if (selectedAnswer != currentAnswer) {
+    options[selectedAnswer].classList.replace("selected-answer", "wrong-answer");
+    selectedAnswerAudio.pause();
+    wrongAnswerAudio.play();
+    await delay(2000);
+    endGame();
+  } else {
+    options[selectedAnswer].classList.replace("selected-answer", "correct-answer");
+    selectedAnswerAudio.pause();
+    correctAnswerAudio.play();
+    await delay(6000);
+    displayNextQuestion();
+  }
+
 }
 
 // Reset the state of the game
 function resetState() {
+  // clear options
   let options = document.getElementsByClassName("options");
   for (let i = 0; i < options.length; i++) {
     options[i].classList.remove("selected-answer");
