@@ -115,7 +115,7 @@ async function correctAnswer(questionObject) {
   console.log(correctAnswerIndex);
 
   for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", function () {
+    options[i].addEventListener("click", async function () {
       letsPlayAudio.pause();
       selectedAnswerAudio.play();
       options[i].classList.add("selected-answer");
