@@ -16,7 +16,8 @@ This project is a simulation of the popuar Who Wants To Be A Millionaire tv show
 * Adding functionality to prize money div. <br/>
 ![Screenshot (13)](https://user-images.githubusercontent.com/103685058/185189201-d5e261a7-be52-4077-a572-3b4a4be0b342.png)
 * Adding game over/ game won visual elements.
-* Adding functionality to lifelines
+* Adding functionality to lifelines. <br/>
+![Screenshot (14)](https://user-images.githubusercontent.com/103685058/185189590-62e96f6b-a132-4802-8fdf-70a2c2c6e6dd.png)
 * Anything else you think would be cool :wink:
 
 # Usage
