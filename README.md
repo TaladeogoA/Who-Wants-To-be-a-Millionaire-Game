@@ -48,5 +48,5 @@ You can edit the scripts in package.json and the tailwind.config.js file to chan
 - Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
 - Attribution is not required, although it is really appreciated.
 
-### Look forward to seeing your contributions.
+### Looking forward to seeing your contributions.
 
