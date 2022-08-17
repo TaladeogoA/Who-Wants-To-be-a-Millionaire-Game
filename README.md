@@ -13,7 +13,7 @@ This project is a simulation of the popuar Who Wants To Be A Millionaire tv show
 * Git/ Github
 
 # You can contribute by:
-* Adding functionality to prize money div.
+* Adding functionality to prize money div. <br/>
 ![Screenshot (13)](https://user-images.githubusercontent.com/103685058/185189201-d5e261a7-be52-4077-a572-3b4a4be0b342.png)
 * Adding game over/ game won visual elements.
 * Adding functionality to lifelines
