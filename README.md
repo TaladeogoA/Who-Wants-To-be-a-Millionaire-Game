@@ -1,9 +1,9 @@
 # Who-Wants-To-be-a-Millionaire-Game
 
-#About project
+# About project
 This project is a simulation of the popuar Who Wants To Be A Millionaire tv show. 
 
-#Skiils needed
+# Skiils needed
 * HTML
 * CSS
 * Tailwind CSS (Not absolutely necessary)
