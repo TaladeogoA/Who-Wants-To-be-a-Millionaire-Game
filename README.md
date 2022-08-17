@@ -1,4 +1,6 @@
 # Who-Wants-To-be-a-Millionaire-Game
+![Screenshot (15)](https://user-images.githubusercontent.com/103685058/185188624-f3b80adf-9800-4304-a182-c65290233eb5.png)
+
 
 # About project
 This project is a simulation of the popuar Who Wants To Be A Millionaire tv show. 
