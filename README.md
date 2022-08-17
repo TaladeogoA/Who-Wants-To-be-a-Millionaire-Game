@@ -40,9 +40,6 @@ To build once run...
 npm run build
 ```
 
-You can edit the scripts in package.json and the tailwind.config.js file to change input/output locations
-
-
 ## Terms and License
 
 - Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
