@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./*.{html,js}", "./scripts/**/*.{html,js}"],
   theme: {
+    fontFamily: {
+      roboto: ["Roboto", "sans-serif"],
+    },
+
     extend: {
       colors: {
         darkerBlue: "#03163B",

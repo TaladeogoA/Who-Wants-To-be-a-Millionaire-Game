@@ -14,7 +14,12 @@
     />
 
     <!-- Fonts -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Scripts -->
     <!-- <script defer src="scripts/script.js"></script> -->
     <script defer src="scripts/prom.js"></script>
@@ -25,7 +30,7 @@
     <title>WWTBAM</title>
   </head>
 
-  <body>
+  <body class="font-roboto">
     <!-- Lifeline Audio -->
     <audio id="first-ping" src="audio/first-ping.mp3"></audio>
     <audio id="second-ping" src="audio/second-ping.mp3"></audio>
@@ -112,12 +117,17 @@
         </div>
         <!-- Options -->
         <div
-          class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 place-content-stretch w-full"
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 place-content-stretch w-full relative gap-6"
         >
+          <div
+            class="absolute flex items-center justify-center text-center w-10 h-10 -translate-x-1/2 left-1/2 -top-4 md:top-1/2 md:-translate-y-1/2 bg-transparent"
+          >
+            <span class="count text-3xl">1</span>
+          </div>
           <div
             data-id="0"
             id="option-one"
-            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+            class="options rounded border-4 border-border p-2 sm:p-3 w-full mt-6 md:mt-0"
           >
             <span class="text-orange font-bold mr-1">A:</span>
             <span>Lorem</span>
