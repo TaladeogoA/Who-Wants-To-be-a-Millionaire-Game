@@ -28,6 +28,7 @@ function endGame() {
   console.log("The game is over");
 }
 
+
 let currentQuestion; // make current question available to entire app
 
 async function displayNextQuestion() {
