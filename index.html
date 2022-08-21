@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Fonts -->
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Scripts -->
     <!-- <script defer src="scripts/script.js"></script> -->
     <script defer src="scripts/prom.js"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="dist/output.css" />
 
     <title>WWTBAM</title>
-</head>
+  </head>
 
-<body>
+  <body class="font-roboto">
     <!-- Lifeline Audio -->
     <audio id="first-ping" src="audio/first-ping.mp3"></audio>
     <audio id="second-ping" src="audio/second-ping.mp3"></audio>
@@ -28,87 +40,122 @@
     <audio id="correct-answer-audio" src="audio/correct-answer.mp3"></audio>
     <audio id="wrong-answer-audio" src="audio/wrong-answer-audio.mp3"></audio>
 
-
     <!-- Welcome -->
-    <section class="welcome-container h-screen w-full flex items-center justify-center bg-[url(../images/welcome-background-mobile.jpg)] sm:bg-[url(../images/welcome-background-img.jpg)] sm:items-end">
-        <div id="lets-play" class="rounded border-4 border-border p-4 text-white font-bold text-xl bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-4/5 my-8 hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange">
-            <p class="text-center text-lg">
-                LET'S PLAY
-            </p>
-        </div>
+    <section
+      class="welcome-container h-screen w-full flex items-center justify-center bg-[url(../images/welcome-background-mobile.jpg)] sm:bg-[url(../images/welcome-background-img.jpg)] sm:items-end"
+    >
+      <div
+        id="lets-play"
+        class="rounded border-4 border-border p-4 text-white font-bold text-xl bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-4/5 my-8 hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange"
+      >
+        <p class="text-center text-lg">LET'S PLAY</p>
+      </div>
     </section>
 
     <!--Actual Game -->
-    <section class="hidden question-container py-6 p-2 h-screen w-full text-white flex-col-reverse justify-start gap-2 sm:flex-col sm:justify-around sm:m-0 items-center bg-[url(../images/game-background.jpg)]">
-        <!-- Money, lifelines -->
-        
-       <div class="sm:w-4/5 flex sm:justify-between">
-         <div class="lifelines flex items-center gap-6 sm:flex-col sm:justify-evenly">
-             <div id="fifty-fifty" class="hover:cursor-pointer">
-                <img src="images/50-50.png" alt="">
-             </div>
+    <section
+      class="hidden question-container py-6 p-2 h-screen w-full text-white flex-col-reverse justify-start gap-2 sm:flex-col sm:justify-around sm:m-0 items-center bg-[url(../images/game-background.jpg)]"
+    >
+      <!-- Money, lifelines -->
 
-             <div id="phone-a-friend" class="hover:cursor-pointer">
-                <img src="images/phone-a-friend.png" alt="">
-             </div>
-             <div id="ask-the-audience" class="hover:cursor-pointer">
-                <img src="images/ask-the-audience.png" alt="">
-             </div>
-         </div>
-        
-         <div class="hidden sm:block bg-blueCardBg rounded border-4 border-silverWhite">
-             <ol reversed class="text-right text-orange text-base list-decimal font-medium p-2 pl-10">
-                 <li class="text-white font-bold">₦20,000,000</li>
-                 <li>₦10,000,000</li>
-                 <li>₦5,000,000</li>
-                 <li>₦2,000,000</li>
-                 <li>₦1,000,000</li>
-                 <li class="text-white font-bold">₦500,000</li>
-                 <li>₦250,000</li>
-                 <li>₦150,000</li>
-                 <li class="money-active">₦100,000</li>
-                 <li>₦50,000</li>
-                 <li class="text-white font-bold">₦30,000</li>
-                 <li>₦20,000</li>
-                 <li>₦15,000</li>
-                 <li>₦10,000</li>
-                 <li>₦5,000</li>
-             </ol>
-         </div>
-       </div>
+      <div class="sm:w-4/5 flex sm:justify-between">
+        <div
+          class="lifelines flex items-center gap-6 sm:flex-col sm:justify-evenly"
+        >
+          <div id="fifty-fifty" class="hover:cursor-pointer">
+            <img src="images/50-50.png" alt="" />
+          </div>
 
-
-        <!-- Question -->
-        <div class="w-4/5">
-            <div id="question-card" class="rounded border-4 border-border p-4 bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-full my-3">
-                <p class="text-center text-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloremque?
-                </p>
-            </div>
-            <!-- Options -->
-            <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 place-content-stretch w-full">
-
-                <div data-id="0" id="option-one" class="options rounded border-4 border-border p-2 sm:p-3 w-full">
-                    <span class="text-orange font-bold mr-1">A:</span>
-                    <span>Lorem</span>
-                </div>
-
-                <div data-id="1" id="option-two" class="options rounded border-4 border-border p-2 sm:p-3 w-full">
-                    <span class="text-orange font-bold mr-1">B:</span>
-                    <span>Ipsum</span>
-                </div>
-
-                <div data-id="2" id="option-three" class="options rounded border-4 border-border p-2 sm:p-3 w-full">
-                    <span class="text-orange font-bold mr-1">C:</span>
-                    <span>Dolor</span>
-                </div>
-
-                <div data-id="3" id="option-four" class="options rounded border-4 border-border p-2 sm:p-3 w-full">
-                    <span class="text-orange font-bold mr-1">D:</span>
-                    <span>Sit amet</span>
-                </div>
-            </div>
+          <div id="phone-a-friend" class="hover:cursor-pointer">
+            <img src="images/phone-a-friend.png" alt="" />
+          </div>
+          <div id="ask-the-audience" class="hover:cursor-pointer">
+            <img src="images/ask-the-audience.png" alt="" />
+          </div>
+          <button class="audio-control text-5xl text-white">
+            <i class="fas fa-volume-up hidden unmute"></i>
+            <i class="fas fa-volume-mute mute"></i>
+          </button>
         </div>
+
+        <div
+          class="hidden sm:block bg-blueCardBg rounded border-4 border-silverWhite"
+        >
+          <ol
+            reversed
+            class="text-right text-orange text-base list-decimal font-medium p-2 pl-10"
+          >
+            <li class="text-white font-bold">₦20,000,000</li>
+            <li>₦10,000,000</li>
+            <li>₦5,000,000</li>
+            <li>₦2,000,000</li>
+            <li>₦1,000,000</li>
+            <li class="text-white font-bold">₦500,000</li>
+            <li>₦250,000</li>
+            <li>₦150,000</li>
+            <li class="money-active">₦100,000</li>
+            <li>₦50,000</li>
+            <li class="text-white font-bold">₦30,000</li>
+            <li>₦20,000</li>
+            <li>₦15,000</li>
+            <li>₦10,000</li>
+            <li>₦5,000</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Question -->
+      <div class="w-4/5">
+        <div
+          id="question-card"
+          class="rounded border-4 border-border p-4 bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-full my-3"
+        >
+          <p class="text-center text-lg">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
+            doloremque?
+          </p>
+        </div>
+        <!-- Options -->
+        <div
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 place-content-stretch w-full relative"
+        >
+          <div
+            data-id="0"
+            id="option-one"
+            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+          >
+            <span class="text-orange font-bold mr-1">A:</span>
+            <span>Lorem</span>
+          </div>
+
+          <div
+            data-id="1"
+            id="option-two"
+            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+          >
+            <span class="text-orange font-bold mr-1">B:</span>
+            <span>Ipsum</span>
+          </div>
+
+          <div
+            data-id="2"
+            id="option-three"
+            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+          >
+            <span class="text-orange font-bold mr-1">C:</span>
+            <span>Dolor</span>
+          </div>
+
+          <div
+            data-id="3"
+            id="option-four"
+            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+          >
+            <span class="text-orange font-bold mr-1">D:</span>
+            <span>Sit amet</span>
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>

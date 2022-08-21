@@ -11,6 +11,10 @@ const welcomeSection = document.querySelector(".welcome-container");
 const selectedAnswerAudio = document.getElementById("selected-answer-audio");
 const correctAnswerAudio = document.getElementById("correct-answer-audio");
 const wrongAnswerAudio = document.getElementById("wrong-answer-audio");
+const audioBtnControl = document.querySelector(".audio-control");
+
+// initialize boolean for audio control
+let playAudio = true;
 
 letsPlayBtn.addEventListener("click", startGame);
 
@@ -34,7 +38,7 @@ let currentQuestion; // make current question available to entire app
 async function displayNextQuestion() {
   // console.log("🚀 ~ displayNextQuestion is running", displayNextQuestion);
   resetState();
-  letsPlayAudio.play();
+  if (playAudio) letsPlayAudio.play();
   const question = await getRandomQuestion();
   currentQuestion = question;
   displayQuestion(currentQuestion);
@@ -87,26 +91,31 @@ async function handleAnswer(e) {
   options = Array.from(options);
   const currentAnswer = currentQuestion.correct;
 
-  letsPlayAudio.pause();
-  selectedAnswerAudio.play();
+  if (playAudio) {
+    letsPlayAudio.pause();
+    selectedAnswerAudio.play();
+  }
   options[selectedAnswer].classList.add("selected-answer");
 
   await delay(2000);
 
   if (selectedAnswer != currentAnswer) {
-    options[selectedAnswer].classList.replace("selected-answer", "wrong-answer");
+    options[selectedAnswer].classList.replace(
+      "selected-answer",
+      "wrong-answer"
+    );
     selectedAnswerAudio.pause();
-    wrongAnswerAudio.play();
+    if (playAudio) wrongAnswerAudio.play();
     await delay(2000);
     endGame();
   } else {
-    options[selectedAnswer].classList.replace("selected-answer", "correct-answer");
+    options[selectedAnswer].classList.remove("selected-answer");
+    options[selectedAnswer].classList.add("correct-answer");
     selectedAnswerAudio.pause();
-    correctAnswerAudio.play();
+    if (playAudio) correctAnswerAudio.play();
     await delay(6000);
     displayNextQuestion();
   }
-
 }
 
 // Reset the state of the game
@@ -126,7 +135,8 @@ function resetState() {
 //====================//
 // Get the data from the URL
 async function getQuestions() {
-  const URL = "https://raw.githubusercontent.com/aaronnech/Who-Wants-to-Be-a-Millionaire/master/questions.json";
+  const URL =
+    "https://raw.githubusercontent.com/aaronnech/Who-Wants-to-Be-a-Millionaire/master/questions.json";
 
   try {
     const response = await fetch(URL);
@@ -155,3 +165,20 @@ async function getRandomQuestion() {
 
   return questions[randomIndex];
 }
+
+// control audio
+let mute = document.querySelector(".mute");
+let unmute = document.querySelector(".unmute");
+audioBtnControl.addEventListener("click", () => {
+  playAudio = !playAudio;
+
+  if (playAudio) {
+    letsPlayAudio.play();
+    unmute.classList.add("hidden");
+    mute.classList.remove("hidden");
+  } else {
+    letsPlayAudio.pause();
+    unmute.classList.remove("hidden");
+    mute.classList.add("hidden");
+  }
+});

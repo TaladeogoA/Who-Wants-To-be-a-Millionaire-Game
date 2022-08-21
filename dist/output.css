@@ -566,6 +566,18 @@ video {
   position: relative;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
+.-top-6 {
+  top: -1.5rem;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -578,6 +590,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .flex {
@@ -596,8 +612,12 @@ video {
   height: 100vh;
 }
 
-.h-full {
-  height: 100%;
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .w-full {
@@ -606,6 +626,15 @@ video {
 
 .w-4\/5 {
   width: 80%;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .list-decimal {
@@ -652,6 +681,10 @@ video {
   border-width: 4px;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-border {
   --tw-border-opacity: 1;
   border-color: rgb(100 143 159 / var(--tw-border-opacity));
@@ -666,16 +699,16 @@ video {
   background-color: rgba(3, 22, 59, 0.7);
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-\[url\(\.\.\/images\/welcome-background-mobile\.jpg\)\] {
   background-image: url(../images/welcome-background-mobile.jpg);
 }
 
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\.\.\/images\/video-bg\.jpg\)\] {
-  background-image: url(../images/video-bg.jpg);
 }
 
 .bg-\[url\(\.\.\/images\/game-background\.jpg\)\] {
@@ -695,11 +728,6 @@ video {
 
 .to-darkerBlue {
   --tw-gradient-to: #03163B;
-}
-
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .p-4 {
@@ -727,6 +755,10 @@ video {
   text-align: right;
 }
 
+.font-roboto {
+  font-family: Roboto, sans-serif;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -737,9 +769,19 @@ video {
   line-height: 1.75rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -760,9 +802,14 @@ video {
   color: rgb(219 152 45 / var(--tw-text-opacity));
 }
 
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /*Personalized styles*/
 
-.welcome-container, .question-container {
+.welcome-container,
+.question-container {
   /* background-image: url(../images/welcome-background-img.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
@@ -776,28 +823,29 @@ video {
 }
 
 .options {
-  background-image: linear-gradient(to bottom, #03163B, #012677, #03163B);
+  background-image: linear-gradient(to bottom, #03163b, #012677, #03163b);
 }
 
 .options:hover {
-  background-image: linear-gradient(180deg, #FCB31E 0%, #F9901C 100%);
+  background-image: linear-gradient(180deg, #fcb31e 0%, #f9901c 100%);
   color: black;
-  border: #F9901C;
+  border: #f9901c;
 }
 
 .selected-answer {
-  background-image: linear-gradient(180deg, #FCB31E 0%, #F9901C 100%);
+  background-image: linear-gradient(180deg, #fcb31e 0%, #f9901c 100%);
   color: black;
   border-color: orange;
 }
 
 .correct-answer {
-  background-image: linear-gradient(180deg, #0AB900 0%, #09A700 100%);
+  background-image: linear-gradient(180deg, #0ab900 0%, #09a700 100%);
+  /* background: #09a700; */
   color: white;
 }
 
 .wrong-answer {
-  background-image: linear-gradient(180deg, #C20C0C 0%, #7C0000 100%);
+  background-image: linear-gradient(180deg, #c20c0c 0%, #7c0000 100%);
   color: white;
 }
 
@@ -808,6 +856,12 @@ video {
 .lifelines div:hover {
   transform: scale(1.3);
 }
+
+/* @layer components {
+  .correct-answer {
+    @apply text-amber-400 animate-blink;
+  }
+} */
 
 .hover\:cursor-pointer:hover {
   cursor: pointer;
@@ -884,5 +938,20 @@ video {
 
   .sm\:p-3 {
     padding: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:top-1\/2 {
+    top: 50%;
+  }
+
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .md\:-translate-y-1\/2 {
+    --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }

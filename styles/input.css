@@ -2,52 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /*Personalized styles*/
-.welcome-container, .question-container {
-    /* background-image: url(../images/welcome-background-img.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
+.welcome-container,
+.question-container {
+  /* background-image: url(../images/welcome-background-img.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .money-active {
-    background-color: orange;
-    color: black;
-    padding: 2px;
+  background-color: orange;
+  color: black;
+  padding: 2px;
 }
 
 .options {
-    background-image: linear-gradient(to bottom, #03163B, #012677, #03163B);
+  background-image: linear-gradient(to bottom, #03163b, #012677, #03163b);
 }
 
 .options:hover {
-    background-image: linear-gradient(180deg, #FCB31E 0%, #F9901C 100%);
-    color: black;
-    border: #F9901C;
+  background-image: linear-gradient(180deg, #fcb31e 0%, #f9901c 100%);
+  color: black;
+  border: #f9901c;
 }
 
 .selected-answer {
-    background-image: linear-gradient(180deg, #FCB31E 0%, #F9901C 100%);
-    color: black;
-    border-color: orange;
+  background-image: linear-gradient(180deg, #fcb31e 0%, #f9901c 100%);
+  color: black;
+  border-color: orange;
 }
 
 .correct-answer {
-    background-image: linear-gradient(180deg, #0AB900 0%, #09A700 100%);
-    color: white;
+  background-image: linear-gradient(180deg, #0ab900 0%, #09a700 100%);
+  /* background: #09a700; */
+  color: white;
 }
 
 .wrong-answer {
-    background-image: linear-gradient(180deg, #C20C0C 0%, #7C0000 100%);
-    color: white;
+  background-image: linear-gradient(180deg, #c20c0c 0%, #7c0000 100%);
+  color: white;
 }
 
 #selected-answer-option {
-    color: black;
+  color: black;
 }
 
 .lifelines div:hover {
-    transform: scale(1.3);
+  transform: scale(1.3);
 }
+
+/* @layer components {
+  .correct-answer {
+    @apply text-amber-400 animate-blink;
+  }
+} */
