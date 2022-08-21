@@ -558,14 +558,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -594,10 +586,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .w-full {
@@ -674,10 +662,6 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
-.bg-\[url\(\.\.\/images\/video-bg\.jpg\)\] {
-  background-image: url(../images/video-bg.jpg);
-}
-
 .bg-\[url\(\.\.\/images\/game-background\.jpg\)\] {
   background-image: url(../images/game-background.jpg);
 }
@@ -695,11 +679,6 @@ video {
 
 .to-darkerBlue {
   --tw-gradient-to: #03163B;
-}
-
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .p-4 {

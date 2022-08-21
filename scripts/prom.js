@@ -15,7 +15,6 @@ const wrongAnswerAudio = document.getElementById("wrong-answer-audio");
 letsPlayBtn.addEventListener("click", startGame);
 
 function startGame() {
-  console.log("🚀 ~ startGame is starting", startGame);
   letsPlayAudio.play();
   welcomeSection.classList.replace("h-screen", "h-0");
   letsPlayBtn.style.display = "none";
@@ -25,13 +24,11 @@ function startGame() {
 
 function endGame() {
   console.log("🚀 ~ endGame is running", endGame);
-  console.log("The game is over");
 }
 
 let currentQuestion; // make current question available to entire app
 
 async function displayNextQuestion() {
-  console.log("🚀 ~ displayNextQuestion is running", displayNextQuestion);
   resetState();
   letsPlayAudio.play();
   const question = await getRandomQuestion();
@@ -40,8 +37,6 @@ async function displayNextQuestion() {
 }
 
 function displayQuestion(questionObject) {
-  console.log("🚀 ~ displayQuestion is running", displayQuestion);
-  console.log(currentQuestion);
 
   const questionCard = document.getElementById("question-card");
   questionCard.innerHTML = `<h2>${questionObject.question}</h2>`;
@@ -80,7 +75,6 @@ const delay = (ms) => {
 };
 
 async function handleAnswer(e) {
-  console.log("🚀 ~ handleAnswer is running", handleAnswer);
   const selectedAnswer = e.target.dataset.id;
   let options = document.getElementsByClassName("options");
   options = Array.from(options);
@@ -154,3 +148,5 @@ async function getRandomQuestion() {
 
   return questions[randomIndex];
 }
+
+

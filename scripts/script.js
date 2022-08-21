@@ -16,7 +16,6 @@ async function getQuestions() {
     let response = await fetch(URL);
     let data = await response.json();
     return data;
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -70,7 +69,7 @@ async function getRandomQuestion() {
 async function displayQuestion() {
   resetState();
   let questionObject = await getRandomQuestion();
-  console.log(questionObject);
+  // console.log(questionObject);
 
   let questionCard = document.getElementById("question-card");
   questionCard.innerHTML = `<h2>${questionObject.question}</h2>`;
@@ -112,7 +111,6 @@ async function correctAnswer(questionObject) {
   // let questionObject = await getRandomQuestion();
   let options = document.getElementsByClassName("options");
   let correctAnswerIndex = questionObject.correct;
-  console.log(correctAnswerIndex);
 
   for (let i = 0; i < options.length; i++) {
     options[i].addEventListener("click", async function (e) {
