@@ -16,9 +16,6 @@ const audioBtnControl = document.querySelector(".audio-control");
 // initialize boolean for audio control
 let playAudio = true;
 
-// no of questions answered
-let count = 0;
-
 letsPlayBtn.addEventListener("click", startGame);
 
 function startGame() {
@@ -44,8 +41,6 @@ async function displayNextQuestion() {
   const question = await getRandomQuestion();
   currentQuestion = question;
   displayQuestion(currentQuestion);
-  count++;
-  document.querySelector(".count").textContent = count;
 }
 
 function displayQuestion(questionObject) {
