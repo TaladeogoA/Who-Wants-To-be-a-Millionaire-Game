@@ -4,7 +4,7 @@
 
 # About project
 
-This project is a simulation of the popuar Who Wants To Be A Millionaire tv show. **Who Wants to Be a Millionaire** is a quiz competition where contestants have to correctly answer a series of multiple-choice questions in order to advance to the next level / question.
+This project is a simulation of the popular Who Wants To Be A Millionaire tv show. **Who Wants to Be a Millionaire** is a quiz competition where contestants have to correctly answer a series of multiple-choice questions in order to advance to the next level / question.
 
 # Skiils needed
 
