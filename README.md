@@ -71,27 +71,27 @@ It’s important to remember that the questions which make up each level will no
 
 There are three **safe havens** in the question structure (Questions five, ten and fifteen). Contestants accumulate money with each correct answer, but should the they answer incorrectly before reaching a safe haven, they stand to lose a large amount of winnings. Below is a summary of the question value structure:
 
-- Question 1 - $100
-- Question 2 - $200
-- Question 3 - $300
-- Question 4 - $500
-- Question 5 - $1,000 Safe Haven.
+- Question 1 - ₦5,000
+- Question 2 - ₦10,000
+- Question 3 - ₦15,000
+- Question 4 - ₦20,000
+- Question 5 - ₦30,000 Safe Haven.
 
-If contestants get this question wrong, they leave with nothing. If this question is answered correctly, contestants are guaranteed S1,000 even if the answer incorrectly before reaching the next safe haven at Question 10.
+If contestants get this question wrong, they leave with nothing. If this question is answered correctly, contestants are guaranteed ₦30,000 even if the answer incorrectly before reaching the next safe haven at Question 10.
 
-- Question 6 - $2,000
-- Question 7 - $4,000
-- Question 8 - $8,000
-- Question 9 - $16,000
-- Question 10 - $32,000 Safe Haven.
+- Question 6 - ₦50,000
+- Question 7 - ₦100,000
+- Question 8 - ₦150,000
+- Question 9 - ₦250,000
+- Question 10 - ₦500,000 Safe Haven.
 
-If contestants get this question wrong, they leave with $1,000. If this question is answered correctly, contestants are guaranteed S32,000 even if the answer incorrectly before reaching Question 15.
+If contestants get this question wrong, they leave with ₦30,000. If this question is answered correctly, contestants are guaranteed ₦500,000 even if the answer incorrectly before reaching Question 15.
 
-- Question 11 - $64,000
-- Question 12 - $125,000
-- Question 13 - $250,000
-- Question 14 - $500,000
-- Question 15 - $1,000,000
+- Question 11 - ₦1,000,000
+- Question 12 - ₦2,000,000
+- Question 13 - ₦5,000,000
+- Question 14 - ₦10,000,000
+- Question 15 - ₦20,000,000
 
 ## Lifelines
 
