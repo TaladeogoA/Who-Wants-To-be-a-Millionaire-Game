@@ -16,7 +16,7 @@ This project is a simulation of the popuar Who Wants To Be A Millionaire tv show
 
 # Contributing
 
-Ensure you go through the [CONTRIBUTING.md](https://github.com/TaladeogoA/Who-Wants-To-be-a-Millionaire-Game/CONTRIBUTING.md) file before you start making any contribution.
+Ensure you go through the [CONTRIBUTING.md](https://github.com/TaladeogoA/Who-Wants-To-be-a-Millionaire-Game/blob/main/CONTRIBUTING.md) file before you start making any contribution.
 
 ## You can contribute by:
 
