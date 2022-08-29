@@ -31,6 +31,7 @@ async function displayNextQuestion() {
   if (playAudio) letsPlayAudio.play();
   const question = await getRandomQuestion();
   currentQuestion = question;
+  localStorage.setItem('currentQuestion', JSON.stringify(currentQuestion));
   
   // ==== Save current question to localStorage ==== //
   localStorage.setItem('currentQuestion', JSON.stringify(currentQuestion));
