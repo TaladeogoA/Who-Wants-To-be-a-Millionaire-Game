@@ -17,8 +17,6 @@ import {
 } from "./question.js";
 
 
-let currentQuestion = JSON.parse(localStorage.getItem('currentQuestion'));
-
 // ==== Function to introduce delay ==== //
 const delay = (ms) => {
   return new Promise((resolve) => {
@@ -38,6 +36,7 @@ async function handleAnswer(e) {
   const selectedAnswer = e.target.dataset.id;
   let options = document.getElementsByClassName("options");
   options = Array.from(options);
+  const currentQuestion = JSON.parse(localStorage.getItem('currentQuestion'))
   const currentAnswer = currentQuestion.correct;
 
   if (playAudio) {
@@ -48,7 +47,7 @@ async function handleAnswer(e) {
 
   await delay(2000);
   
-  console.log(playAudio)
+  // console.log(playAudio)
 
   if (selectedAnswer != currentAnswer) {
     options[selectedAnswer].classList.replace(
