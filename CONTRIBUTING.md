@@ -39,8 +39,11 @@ Below you will find all the necessary guides, workflow and process need to revie
   ```
   
   ```
-  git checkout <branch-name> git rebase
-  upstream/<branch-name
+  git checkout <branch-name> 
+  ```
+  
+  ```
+  git rebase upstream <branch-name>
   ```
 
 # Step 3 : Branch 
